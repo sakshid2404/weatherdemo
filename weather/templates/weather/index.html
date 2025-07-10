@@ -1,0 +1,53 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <title>myweather</title>
+    <style>
+        body {
+            background-image: url("{%static 'weather/images.jpeg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 20px;
+            margin: 7px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+ <br><br><br><br>
+     <h1><b>Check Weather</b></body></h1><br>
+
+ 
+    <form method="get">
+        <input type="text" name="city" placeholder="Enter city name" required><br><br><br>
+        <button type="submit">Get Weather</button><br><br>
+    </form>
+    
+    
+        <img src=" {{req.current.condition.icon}} " width="120px" height ="180px" alt="weather cloud"><br>
+
+
+          <class="result">
+             
+             <h2> <p>City : {{ city }}</p></h2>
+             <h2> <p>Condition : {{ req.current.condition.text }}</p></h2>
+             <h2> <p>Temperature : {{ req.current.temp_c }}°C</p></h2>
+    
+   
+    
+</body>
+</html>
