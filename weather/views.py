@@ -16,7 +16,7 @@ def index(request):
              
         }
     ) 
-    return HttpResponse(req['current']['condition']['text'])
+    
     
 
 
